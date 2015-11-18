@@ -6,7 +6,7 @@
     <ProjectGuid>{CB3944A7-4522-4619-B8BA-3A61FB5E0E60}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Yioulai-eu-wechat.Test</RootNamespace>
+    <RootNamespace>Yioulaieuwechat.Test</RootNamespace>
     <AssemblyName>Yioulai-eu-wechat.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -61,6 +61,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Migrations\201511180744390_Initial.cs" />
+    <Compile Include="Migrations\201511180744390_Initial.Designer.cs">
+      <DependentUpon>201511180744390_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YioulaieuwechatDataContext.cs" />
@@ -74,6 +79,11 @@
       <Project>{3EA9638D-90A0-491F-92E7-4C8AAADE902D}</Project>
       <Name>Mango-Cards.Library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511180744390_Initial.resx">
+      <DependentUpon>201511180744390_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

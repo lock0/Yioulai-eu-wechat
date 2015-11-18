@@ -8,12 +8,8 @@ namespace Yioulaieuwechat.Test
 {
     public class YioulaieuwechatDataContext : DbContext, IDataContext
     {
-        public IDbSet<Account> Accounts { get; set; }
-        public IDbSet<Company> Companies { get; set; }
-        public IDbSet<CardDemo> CardDemos { get; set; }
-        public IDbSet<Employee> Employees { get; set; }
-        public IDbSet<CardType> CardTypes { get; set; }
-        public IDbSet<LoginLog> LoginLogs { get; set; }
+        public IDbSet<Offer> Offers { get; set; }
+        public IDbSet<Order> Orders { get; set; }
         public IDbSet<WeChatUser> WeChatUsers { get; set; }
         IDbSet<TEntity> IDataContext.Set<TEntity>()
         {
@@ -45,8 +41,8 @@ namespace Yioulaieuwechat.Test
             //modelBuilder.Configurations.Add(new CategoryMapping());
             //modelBuilder.Configurations.Add(new AvatarMapping());
             //modelBuilder.Configurations.Add(new LetterMapping());
-            //modelBuilder.Configurations.Add(new RetailerMapping());
-            //modelBuilder.Configurations.Add(new SiteMapping());
+            modelBuilder.Configurations.Add(new OfferMapping());
+            modelBuilder.Configurations.Add(new WeChatUserMapping());
 
             base.OnModelCreating(modelBuilder);
         }
