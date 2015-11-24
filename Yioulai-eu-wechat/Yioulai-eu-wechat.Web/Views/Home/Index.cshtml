@@ -3,44 +3,46 @@
     Layout = "~/Views/Shared/_EmptyLayout.cshtml";
 }
 @Scripts.Render("~/bundles/Home")
-
 <div class="container">
-    <h1>Home</h1>
-    <a href="~/Home/GetMangoCard/">获取MangoCard</a>   
-    <hr />
-  
-    <!--循环CardType json类型查看api "/api/CardType/" -->
-    <ul data-bind="foreach:viewModel.cardTypes">
-        <li>
-            <span data-bind="text:Name">
-            </span>
-            <ul data-bind="foreach:SubCardTypeModels">
-                <li>
-                    <span data-bind="text:Name"></span>
-                    <ul data-bind="foreach:CardDemoModels">
-                        <li data-bind="text:Name"></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <!--end-->
-    <!--循环雇员 json类型查看api "/api/Employee/" -->
-    <h2>雇员</h2>
-    <table class="table">
+    <h1>qrCode list</h1>
+    <a href="#" class="btn btn-primary" data-bind="click:Home.viewModel.showmyqrcodelist">view my qrcode list</a>
+    <table class=" table">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>性别</th>
+                <th>id</th>
+                <th>title</th>
+                <th>description</th>
+                <th>start date</th>
+                <th>expiry date</th>
+                <th>qrcode</th>
             </tr>
         </thead>
-        <tbody data-bind="foreach:viewModel.employees">
+        <tbody data-bind="foreach:viewModel.qrcodes">
             <tr>
-                <td data-bind="text:Name"></td>
-                <td data-bind="text:Gender"></td>
+                <td data-bind="text:id"></td>
+                <td data-bind="text:title"></td>
+                <td data-bind="text:description"></td>
+                <td data-bind="text:start_date"></td>
+                <td data-bind="text:expiry_date"></td>
+                <td data-bind="kendoQRCode: {value: QrCodeUrl,size: 200}"></td>
             </tr>
         </tbody>
     </table>
-    <!--end-->
+    <div class="modal fade" id="myqrcodelist">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">详细</h4>
+                </div>
+                <div class="modal-body">
+                    <span data-bind="kendoQRCode: {value: viewModel.myqrcodeurl,size: 200}"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>   
 </div>
 

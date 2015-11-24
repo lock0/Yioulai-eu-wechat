@@ -1,15 +1,24 @@
 ﻿var Home = {
     viewModel: {
-        cardTypes: ko.observableArray(),
-        employees: ko.observableArray(),
+        qrcodes: ko.observableArray(),
+        myqrcodeurl: ko.observable(),
     }
 };
+Home.viewModel.showmyqrcodelist = function () {
+    $.get("/api/MyQrCodeList/", function (url) {
+        ko.mapping.fromJS(url, {}, Home.viewModel.myqrcodeurl);
+        $('#myqrcodelist').modal({
+            show: true,
+            backdrop: 'static'
+        });
+    });
+
+}
+
 $(function () {
     ko.applyBindings(Home);
-    $.get("/api/CardType/", function (data) {
-        ko.mapping.fromJS(data, {}, Home.viewModel.cardTypes);
-        $.get("/api/Employee/", function (employees) {
-            ko.mapping.fromJS(employees, {}, Home.viewModel.employees);
-        });
+    $.get("/api/Offer/", function (data) {
+        ko.mapping.fromJS(data, {}, Home.viewModel.qrcodes);
+
     });
 });

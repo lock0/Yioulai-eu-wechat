@@ -220,23 +220,27 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\BaseApiController.cs" />
-    <Compile Include="Controllers\API\CardTypeController.cs" />
-    <Compile Include="Controllers\API\EmployeeController.cs" />
-    <Compile Include="Controllers\API\CardDemoController.cs" />
     <Compile Include="Controllers\API\GetWechatLoginQRCodeController.cs" />
-    <Compile Include="Controllers\API\CometController.cs" />
     <Compile Include="Controllers\API\HeaderSettingController.cs" />
-    <Compile Include="Controllers\API\LoginConfirmationController.cs" />
+    <Compile Include="Controllers\API\MyQrCodeListController.cs" />
+    <Compile Include="Controllers\API\OfferController.cs" />
+    <Compile Include="Controllers\API\QrCodeHandleController.cs" />
+    <Compile Include="Controllers\API\SendMailForSignUpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Help\MailHelper.cs" />
+    <Compile Include="Help\Tools.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CardDemoModel.cs" />
     <Compile Include="Models\CardTypeModel.cs" />
     <Compile Include="Models\CompanyModel.cs" />
+    <Compile Include="Models\ConiqModels\BarcodeModel.cs" />
+    <Compile Include="Models\ConiqModels\OfferModel.cs" />
+    <Compile Include="Models\ConiqModels\SignupModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\Enum\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -245,6 +249,7 @@
     <Compile Include="Models\MangoCardModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\PvDataModel.cs" />
+    <Compile Include="Models\QrCodeControllerModel.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\ShareTimeModel.cs" />
     <Compile Include="Models\WeChatUserModel.cs" />
@@ -274,10 +279,8 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery-2.1.4-vsdoc.js" />
-    <Content Include="Scripts\jquery.qrcode.js" />
-    <Content Include="Scripts\jquery.qrcode.min.js" />
-    <Content Include="Scripts\jquery.qrcode.min.js.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.qrcode-0.12.0.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -285,11 +288,13 @@
     <Content Include="Scripts\JS\GetMangoCard.js" />
     <Content Include="Scripts\JS\Home.js" />
     <Content Include="Scripts\JS\LoginConfirmation.js" />
+    <Content Include="Scripts\JS\MyQrCodeList.js" />
+    <Content Include="Scripts\JS\QrCodeHandle.js" />
+    <Content Include="Scripts\kendo.all.min.js" />
     <Content Include="Scripts\knockout-3.2.0.js" />
+    <Content Include="Scripts\knockout-kendo.min.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\qrcode.js" />
-    <Content Include="Scripts\qrcode.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -330,9 +335,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_EmptyLayout.cshtml" />
-    <Content Include="Views\Home\GetMangoCard.cshtml" />
-    <Content Include="Scripts\qrcode.min.js.map" />
     <Content Include="Views\Home\LoginConfirmation.cshtml" />
+    <Content Include="Views\Home\QrCodeHandle.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Account\VerifyEmail.cshtml" />
+    <Content Include="Views\Home\VerifyEmail.cshtml" />
+    <Content Include="Views\Home\MyQrCodeList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -350,6 +358,9 @@
       <Project>{555D4AFA-FFBD-47A9-972E-64BECB9FC7D7}</Project>
       <Name>Yioulai-eu-wechat.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

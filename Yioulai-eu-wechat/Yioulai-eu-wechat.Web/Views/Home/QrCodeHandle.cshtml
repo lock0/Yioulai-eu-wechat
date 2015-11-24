@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "QrCodeController";
+    Layout = "~/Views/Shared/_EmptyLayout.cshtml";
+}
+@Scripts.Render("~/bundles/QrCodeHandle")
+
+
+<div class="container">
+    <h4>QrCodeController</h4>
+
+    <p>
+        OfferId:<span data-bind="text:viewModel.ConiqOfferModel.id"></span>
+    </p>
+    <p>
+        OpenId:<span data-bind="text:viewModel.WeChatUserModel.OpenId"></span>
+    </p>
+    <p>
+        NickName:<span data-bind="text:viewModel.WeChatUserModel.NickName"></span>
+    </p>
+    <p>
+        Country:<span data-bind="text:viewModel.WeChatUserModel.Country"></span>
+    </p>
+
+    <img style="height:120px; width:120px" data-bind="attr:{src:viewModel.WeChatUserModel.Headimgurl}" />
+    <div data-bind="visible:viewModel.Registered()!=true">
+        <h4>sign up</h4>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">first_name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="first_name" data-bind="value:viewModel.RegisterForm.first_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">last_name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="last_name" data-bind="value:viewModel.RegisterForm.last_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" placeholder="email" data-bind="value:viewModel.RegisterForm.email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">phone country code</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="phone country code" data-bind="value:viewModel.RegisterForm.phone.country_code">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">phone number</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="phone number" data-bind="value:viewModel.RegisterForm.phone.number">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">date of birth</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="date of birth" data-bind="value:viewModel.RegisterForm.date_of_birth">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <a href="#" class="btn btn-primary" data-bind="click:QrCodeHandle.viewModel.SignUp">submit</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

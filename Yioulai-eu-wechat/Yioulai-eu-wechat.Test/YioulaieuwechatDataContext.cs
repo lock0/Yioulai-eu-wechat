@@ -11,6 +11,7 @@ namespace Yioulaieuwechat.Test
         public IDbSet<Offer> Offers { get; set; }
         public IDbSet<Order> Orders { get; set; }
         public IDbSet<WeChatUser> WeChatUsers { get; set; }
+        public IDbSet<CountryCode> CountryCodes { get; set; }
         IDbSet<TEntity> IDataContext.Set<TEntity>()
         {
             return this.Set<TEntity>();

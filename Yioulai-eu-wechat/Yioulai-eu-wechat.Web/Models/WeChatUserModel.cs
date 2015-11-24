@@ -10,6 +10,8 @@ namespace Yioulaieuwechat.Web.Models
     {       
         public Guid Id { get; set; }
         public string OpenId { get; set; }
+        public string CustomerId { get; set; }
+        public string Mail { get; set; }
         public string NickName { get; set; }
         public Gender Gender { get; set; }
         public string Language { get; set; }

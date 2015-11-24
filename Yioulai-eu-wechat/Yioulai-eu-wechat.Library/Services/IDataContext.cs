@@ -14,6 +14,7 @@ namespace Yioulaieuwechat.Library.Services
         IDbSet<Offer> Offers { get; set; }
         IDbSet<Order> Orders { get; set; }
         IDbSet<WeChatUser> WeChatUsers { get; set; }
+        IDbSet<CountryCode> CountryCodes { get; set; }
         int SaveChanges();
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;

@@ -13,8 +13,18 @@ namespace Yioulaieuwechat.Library.Models
     {
         [Key]
         public Guid Id { get; set; }
-        public string Name { get; set; }
         public string Description { get; set; }
+        public string Title { get; set; }
+        /// <summary>
+        /// 过期日期
+        /// </summary>
+        public DateTime? ExpiryDate { get; set; }
+        public DateTime StartDate { get; set; }
+        public string ValidDays { get; set; }
+        /// <summary>
+        /// 创建日期
+        /// </summary>
+        public DateTime CreatedDatetime { get; set; }
         /// <summary>
         /// 第三方Id
         /// </summary>
@@ -31,7 +41,7 @@ namespace Yioulaieuwechat.Library.Models
             HasMany(c => c.Orders)
                 .WithOptional(p => p.Offer)
                 .HasForeignKey(p => p.OfferId);
-            
+
         }
     }
 }

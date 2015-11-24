@@ -50,13 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CountryCode.cs" />
     <Compile Include="Models\Enum\Gender.cs" />
     <Compile Include="Models\Interfaces\IDtStamped.cs" />
     <Compile Include="Models\Offer.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\WeChatUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ICountryCodeService.cs" />
     <Compile Include="Services\IDataContext.cs" />
+    <Compile Include="Services\IOfferService.cs" />
     <Compile Include="Services\IWeChatUserService.cs" />
   </ItemGroup>
   <ItemGroup>

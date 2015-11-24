@@ -61,9 +61,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Migrations\201511180744390_Initial.cs" />
-    <Compile Include="Migrations\201511180744390_Initial.Designer.cs">
-      <DependentUpon>201511180744390_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201511191617484_Initial.cs" />
+    <Compile Include="Migrations\201511191617484_Initial.Designer.cs">
+      <DependentUpon>201511191617484_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511220757319_Initial1.cs" />
+    <Compile Include="Migrations\201511220757319_Initial1.Designer.cs">
+      <DependentUpon>201511220757319_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511220857435_Initial2.cs" />
+    <Compile Include="Migrations\201511220857435_Initial2.Designer.cs">
+      <DependentUpon>201511220857435_Initial2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UnitTest1.cs" />
@@ -81,8 +89,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511180744390_Initial.resx">
-      <DependentUpon>201511180744390_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511191617484_Initial.resx">
+      <DependentUpon>201511191617484_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511220757319_Initial1.resx">
+      <DependentUpon>201511220757319_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511220857435_Initial2.resx">
+      <DependentUpon>201511220857435_Initial2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Choose>

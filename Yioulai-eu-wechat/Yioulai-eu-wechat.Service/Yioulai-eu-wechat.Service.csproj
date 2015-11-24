@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseService.cs" />
+    <Compile Include="Services\CountryCodeService.cs" />
+    <Compile Include="Services\OfferService.cs" />
     <Compile Include="YioulaieuwechatDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\WeChatUserService.cs" />

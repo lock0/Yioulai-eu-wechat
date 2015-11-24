@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "MyQrCodeList";
+    Layout = "~/Views/Shared/_EmptyLayout.cshtml";
+}
+@Scripts.Render("~/bundles/MyQrCodeList")
+<h2>MyQrCodeList</h2>
+
+<table class=" table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>description</th>
+            <th>start date</th>
+            <th>expiry date</th>
+            <th>qrcode</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach:viewModel.QrCodeList">
+        <tr>
+            <td data-bind="text:id"></td>
+            <td data-bind="text:title"></td>
+            <td data-bind="text:description"></td>
+            <td data-bind="text:start_date"></td>
+            <td data-bind="text:expiry_date"></td>
+            <td data-bind="kendoQRCode: {value: image_url,size: 200}"></td>
+        </tr>
+    </tbody>
+</table>

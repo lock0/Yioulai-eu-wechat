@@ -24,11 +24,8 @@ namespace Yioulaieuwechat.Web
         }
         public static void RegisterTypes(IUnityContainer container)
         {
-            container.RegisterType<ICardDemoService, CardDemoService>();
-            container.RegisterType<ICardTypeService, CardTypeService>();
-            container.RegisterType<IEmployeeService, EmployeeService>();
-            container.RegisterType<IAccountService, AccountService>();
-            container.RegisterType<ILoginLogService, LoginLogService>();
+            container.RegisterType<IOfferService, OfferService>();
+            container.RegisterType<ICountryCodeService, CountryCodeService>();
             container.RegisterType<IWeChatUserService, WeChatUserService>();
         }
     }
