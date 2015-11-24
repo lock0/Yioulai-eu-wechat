@@ -32,9 +32,8 @@ namespace Yioulaieuwechat.Web
             //Home
             bundles.Add(new ScriptBundle("~/bundles/Home").Include(
                         "~/Scripts/JS/Home.js"));
-            //knockout-kendo
-            bundles.Add(new ScriptBundle("~/bundles/knockout-kendo").Include("~/Scripts/kendo.all.min.js",
-                        "~/Scripts/knockout-kendo.min.js"));
+            //qrcode
+            bundles.Add(new ScriptBundle("~/bundles/qrcode").Include("~/Scripts/jquery.qrcode-0.12.0.min.js"));
             //GetMangoCard
             bundles.Add(new ScriptBundle("~/bundles/GetMangoCard").Include(
                       "~/Scripts/JS/GetMangoCard.js"));

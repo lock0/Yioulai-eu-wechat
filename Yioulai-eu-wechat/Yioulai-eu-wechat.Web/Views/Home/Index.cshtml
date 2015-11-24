@@ -24,7 +24,7 @@
                 <td data-bind="text:description"></td>
                 <td data-bind="text:start_date"></td>
                 <td data-bind="text:expiry_date"></td>
-                <td data-bind="kendoQRCode: {value: QrCodeUrl,size: 200}"></td>
+                <td data-bind="qrcode:QrCodeUrl"></td>
             </tr>
         </tbody>
     </table>
@@ -36,7 +36,7 @@
                     <h4 class="modal-title">详细</h4>
                 </div>
                 <div class="modal-body">
-                    <span data-bind="kendoQRCode: {value: viewModel.myqrcodeurl,size: 200}"></span>
+                    <span data-bind="qrcode: viewModel.myqrcodeurl"></span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>

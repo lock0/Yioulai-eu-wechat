@@ -24,7 +24,9 @@
             <td data-bind="text:description"></td>
             <td data-bind="text:start_date"></td>
             <td data-bind="text:expiry_date"></td>
-            <td data-bind="kendoQRCode: {value: image_url,size: 200}"></td>
+            <td>
+                <img data-bind="attr:{src:image_url}" />
+            </td>
         </tr>
     </tbody>
 </table>

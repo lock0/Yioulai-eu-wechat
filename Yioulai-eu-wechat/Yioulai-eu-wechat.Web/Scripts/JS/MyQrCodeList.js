@@ -10,6 +10,7 @@ function getQueryStringByName(name) {
     }
     return result[1];
 }
+
 $(function () {
     ko.applyBindings(MyQrCodeList);
     
